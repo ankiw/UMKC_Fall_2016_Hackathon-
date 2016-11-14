@@ -1,0 +1,42 @@
+<ion-view view-title="Welcome Recruiters">
+  <ion-content>
+    <ion-list>
+     <div class="wrap" style="width:30%;">
+	<!-- strat-contact-form -->
+	<div class="contact-form" style="width:100%;">
+		<!-- start-form -->
+		<form class="contact_form"  style="background: #FFF; width:100%;" name="contact_form"><br>
+			<h1>Recruiters Login</h1>
+			<ul>
+
+				<li style="width:100%;">
+					<input type="email" class="textbox1" name="email" ng-model="data.userName" placeholder="example@mail.com" required />
+					<span class="form_hint">Enter a valid email</span>
+					<p><img src="img/contact.png" alt=""></p>
+				</li>
+				<li style="width:100%;">
+					<input type="password" name="password" class="textbox2" ng-model="data.pwd" placeholder="password">
+					<p><img src="img/lock.png" alt=""></p>
+				</li>
+
+			</ul>
+            <div style=>
+               <input type="checkbox" checked> Remember Me</input>
+            
+            </div>       
+            <input type="submit" name="Sign In" ng-click="loginrecruiter()" style="width:100%;" value="Sign In"/>
+			<input type="submit" name="Sign Up" ng-click="goToRegisterPage()" style="width:100%;" value="Sign Up"/>
+
+		</form>
+		<!-- end-form -->
+		<!-- start-account -->
+		<div class="clear"></div>
+	</div>
+	<!-- end-contact-form -->
+	<div class="footer">
+
+	</div>
+</div>
+    </ion-list>
+  </ion-content>
+</ion-view>

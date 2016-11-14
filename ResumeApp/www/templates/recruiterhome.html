@@ -1,0 +1,55 @@
+<ion-view view-title="Recruiter Home">
+  <ion-content>
+    <ion-list>
+        <div class="span7">
+				<div class="widget stacked widget-table action-table">
+
+					<div class="widget-header">
+						<i class="icon-th-list"></i>
+						<h1 style="text-align: center">Candidate Details</h1>
+					</div> <!-- /widget-header -->
+
+					<div class="widget-content">
+						<br>
+						<br>
+
+						<table class="table table-striped table-bordered">
+							<thead>
+							<tr>
+								<th style="text-align: left">Name</th>
+								<th style="text-align: left">Programming Skills</th>
+								<th style="text-align: left">View Resume</th>
+                                <th style="text-align: left">Download Resume</th>
+								<th style="text-align: left">Modify/Delete</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr ng-repeat="candidate in candidateList">
+								<td><input ng-change="edit(candidate)" type='text' ng-model='candidate.name'></td>
+								<td><input ng-change="edit(candidate)" type='text' ng-model='candidate.skills'></td>
+								<td><input ng-change="edit(candidate)" type='text' ng-model='candidate.resume'></td>
+                                <td><button class="goButton" ng-click="download(candidate)">Edit</button></td>
+                                
+								<td>
+									<button class="goButton" ng-click="update(candidate)">Edit</button>
+									<button class="goButton" ng-click="delete(candidate._id)">Del</button>
+								</td>
+							</tr>
+
+							</tbody>
+						</table>
+
+						<button class="goButton" style="background: darkblue;
+		width: 100%;
+		padding: 2px;
+		font-size: 1.3em;
+		letter-spacing:1px;
+		color: #fff;
+		margin: 10px 0 10px;">Refresh</button>
+					</div> <!-- /widget-content -->
+
+				</div> <!-- /widget -->
+			</div>
+    </ion-list>
+  </ion-content>
+</ion-view>
