@@ -17,8 +17,11 @@ The site must allow for applicant to
 											
 # Technologies used are:		
 
-Frond End: Ionic Framework 
-Back End: Mlab Mongo DB
+### Frond End: 
+    Ionic Framework 
+
+### Back End: 
+     Mlab Mongo DB
 
 As part of this project the following veiws are created:
 
