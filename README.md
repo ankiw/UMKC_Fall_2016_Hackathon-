@@ -3,7 +3,7 @@
 
 This project is part of UMKC Hackathon Fall 2016 for usecase provided by DST company.
 
-Usecase description is :
+# Usecase description is :
 
 
 "Create an HTML5 interface that allows for college applicants to create a robust resume online by pulling in existing personal online data to mashup into one entity This can include capturing existing resumes from social media such as LinkedIn, GitHub to add coding projects they have participated in and contributions to open source projects, including feedback or questions linked to their stackoverflow.com accounts. 
@@ -15,7 +15,7 @@ The site must allow for applicant to
 	And participate in gamed coding challenges based on their experience/skills to be reviewed by a recruiter.
 "											
 											
-Technologies used are:		
+# Technologies used are:		
 
 Frond End: Ionic Framework 
 Back End: Mlab Mongo DB
@@ -23,31 +23,35 @@ Back End: Mlab Mongo DB
 As part of this project the following veiws are created:
 
 
-Home Page:
+## Home Page/Welcome Page:
 
 ![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/login.JPG)
 
 
-Recruiters Login Page:
+## Recruiters Login Page:
 
 ![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/recruiters.JPG)
 
 
 
 
-Recruiters Home Page:
+## Recruiters Home Page to view list of candidates after login and select them and further publish them:
 ![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/recruiters%20home%20page.JPG)
 
 
 
-Candidates Upload Resume Page:
+## Candidates Upload Resume Page to create resume in mongo DB:
 
 ![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/candidate.JPG)
 
 
-Selected Candidates Page:
+## Selected Candidates Page which recruiters have published:
 
-![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/candidateselected.JPG)											
+![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/candidateselected.JPG)
+
+## Video description for the project is : 
+
+https://www.youtube.com/watch?v=X7nz5VBxk9g&feature=youtu.be
 											
 											
 											
