@@ -25,27 +25,29 @@ As part of this project the following veiws are created:
 
 Home Page:
 
+![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/login.JPG)
 
 
 Recruiters Login Page:
 
-![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/login.JPG)
+![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/recruiters.JPG)
 
-https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/login.JPG
+
 
 
 Recruiters Home Page:
+![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/recruiters%20home%20page.JPG)
 
 
 
 Candidates Upload Resume Page:
 
-https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/candidate.JPG
+![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/candidate.JPG)
+
 
 Selected Candidates Page:
 
-
-											
+![](https://github.com/rashmitripathi/UMKC_Fall_2016_Hackathon-/blob/master/documentation/candidateselected.JPG)											
 											
 											
 											
