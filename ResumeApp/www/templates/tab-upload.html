@@ -1,27 +1,77 @@
-<ion-view view-title="Candidates Upload Resume">
-  <ion-content>
-    <ion-list>      
-        <h1>Login to respective application to get resume from</h1>
-                    <div class="row omb_row-sm-offset-3 omb_socialButtons">
-    	    <div class="col-xs-4 col-sm-2">
-                	<a href="#" class="btn btn-lg btn-block omb_btn-facebook" ng-click="linkedInlogin()">
-			        <i class="fa fa-facebook visible-xs"></i>
-			        <span >LinkedIn</span>
-		        </a>
-	        </div>
-        	<div class="col-xs-4 col-sm-2">
-		        <a href="#" class="btn btn-lg btn-block omb_btn-twitter">
-			        <i class="fa fa-twitter visible-xs"></i>
-			        <span >GitHub</span>
-		        </a>
-	        </div>	
-        	<div class="col-xs-4 col-sm-2">
-		        <a href="#" class="btn btn-lg btn-block omb_btn-google">
-			        <i class="fa fa-google-plus visible-xs"></i>
-			        <span >Stackoverflow</span>
-		        </a>
-	        </div>	
-		</div>
-    </ion-list>
-  </ion-content>
+<ion-view title="Candidates Upload Resume" id="registerPage">
+    <ion-content padding="true" style="background: url(img/green.jpg) no-repeat center;background-size:cover;" class="has-header">
+         <div class="msg" style="color:white;">Upload your Resume</div> 
+         <div class="spacer" style="width: 300px; height: 36px;"></div>
+         <div class="msg" style="color:white;">{{status}}</div> 
+         
+       <form  id="EmploymentApplication100">
+
+<table border="0" cellpadding="5" cellspacing="0" style="width:100%;">
+<tr> <td>
+<label for="First_Name" style="color:white;"><b>First name *</b></label><br />
+<input name="First_Name" type="text" maxlength="50" style="width: 50%" ng-model="fname" />
+</td> <td style="width: 50%;">
+<label for="Last_Name" style="color:white;"><b>Last name *</b></label><br />
+<input name="Last_Name" type="text" maxlength="50" style="width: 50%" ng-model="lname" />
+</td> </tr> <tr> <td colspan="2">
+<label for="Email_Address" style="color:white;"><b>Email *</b></label><br />
+<input name="Email_Address" type="text" maxlength="100" style="width: 100%" ng-model="email" />
+</td> </tr> <tr> <td colspan="2">
+    </td> </tr> <tr> <td colspan="2">
+<label for="Reference" style="color:white;" ><b>Objective</b></label><br />
+<textarea name="Reference" rows="3" cols="20" style="width: 100%" ng-model="objective"></textarea>
+ <div class="spacer" style="width: 300px; height: 18px;"></div>    
+<label for="Portfolio" style="color:white;"><b>Create Resume by merging information via </b></label><br />
+
+            <p>
+                <a class="btn btn-primary social-login-btn social-linkedin" href="/auth/linkedin" style="width:20%;"><i class="fa fa-linkedin"></i> Sign in with LinkedIn</a>
+                <a class="btn btn-primary social-login-btn social-github" style="width:20%;" href="/auth/linkedin"><i class="fa fa-github"></i> Sign in with Github</a>
+                <a class="btn btn-primary social-login-btn social-stackoverflow" style="width:20%;" href="/auth/google"><i class="fa fa-stackoverflow"></i>Sign in with Stackoverflow</a>
+                   
+                    
+            </p>
+
+           
+  
+</td> </tr> <tr> <td colspan="2">
+<label for="Position" style="color:white;"><b>Add your Skills*</b></label><br />
+<input name="Position" rows="3" type="text" maxlength="100" style="width: 100%;" ng-model="skills" />
+</td> </tr> <tr> <td>
+<label for="Salary"style="color:white;" style="color:white;"><b>University Name</b></label><br />
+    <input name="Salary" type="text" maxlength="50" style="width: 50%;" ng-model="univ"/> </td> <td>
+<label for="StartDate" style="color:white;"><b>Passing year</b></label><br />
+    
+    <select maxlength="200" style="width: 270px" ng-model="year">
+  <option value="2017">2017</option>
+  <option value="2016">2016</option>
+  <option value="2015">2015</option>
+  <option value="2014">2014</option>
+   <option value="2013">2013</option>
+  <option value="2012">2012</option>
+  <option value="2011">2011</option>
+  <option value="2010">2010</option>     
+</select>
+    
+
+</td> </tr> <tr> <td>
+<label for="Phone" style="color:white;" ><b>Phone *</b></label><br />
+<input name="Phone" type="text" maxlength="50" style="width: 100%" ng-model="phone" />
+</td>
+<td>
+  
+   
+    </tr>
+    
+   
+    
+<tr>
+<td>
+</td> </tr>
+</table>
+    <div class="spacer" style="width: 300px; height: 36px;"></div>    
+<input name="skip_submit" style="color:black;width:100%;" class="btn btn-primary social-login-btn" ng-click="buildResume(fname,lname,skills,email,objective,univ,year,phone)" type="submit" value="Create Resume" />
+       
+</form>
+        
+    </ion-content>
 </ion-view>

@@ -73,28 +73,120 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('RecruiterHomeCtrl', function($scope, $state,$filter,$q,LoginService) {
+.controller('RecruiterHomeCtrl', function($scope, $state,$filter,$q,LoginService,$http) {
    
-     $scope.registerData={
-        un:'',
-        pwd:''
-    };
+    $scope.candidateList=new Array();
     
-    $scope.cancel=function(){
-        $state.go('tab.recruiter');   
+      $scope.getData=function(){           
+          $http({
+        method: 'GET',
+        url : 'https://api.mlab.com/api/1/databases/asedemo/collections/resumedb?apiKey=i6Kabqc-LHECJKyDttmt1mPXR50yIZ1o'
+
+      }).success(function(data) {
+             console.log(" get all the details"+data);              
+             var candidateList1=data;   
+             //$scope.candidateList=JSON.parse(data);     
+             console.log(" get all the details"+ candidateList1[0].name);
+              for (var i = 0; i < 3; i++) {
+								console.log("Inside loop" + i);
+                  $scope.candidateList[i] = {
+
+									"name": candidateList1[i].name,
+									"skills": candidateList1[i].skills
+									
+								};
+              }
+      })
     }
-    
+
+    $scope.delete = function(id,callback){
+        var api_key=i6Kabqc-LHECJKyDttmt1mPXR50yIZ1o;
+        var URI = 'https://api.mlab.com/api/1/databases/asedemo/collections/resumedb?apiKey=' + API_KEY + '&q={"id":'+'"'+id + '"'+ '}'
+			var Empty = JSON.stringify({'':''})
+			return $http.put(URI,Empty,config);
+    }
+
+
+    $scope.update = function(candidate,callback){
+
+         var Data = JSON.stringify({
+				name : candidate.name,
+                skills: candidate.skills,
+                resume: candidate.resume
+			});
+        var api_key=i6Kabqc-LHECJKyDttmt1mPXR50yIZ1o;
+			var URI = 'https://api.mlab.com/api/1/databases/asedemo/collections/resumedb?apiKey=' + API_KEY + '&q={"name":' +'"'+name + '"'+ '}'
+			
+			return $http.put(URI,Data,config)
+    }
+
     
 })
 
 
-.controller('uploadCtrl', function($scope, $state,$filter,$q,LoginService) {
+.controller('uploadCtrl', function($scope, $state,$filter,$q,$http,$window) {
     
     
     $scope.linkedInlogin=function(){
         
+        var clientId="786gp01v53psvr";
+        var clientsecret="66biVKvvtU13lPdq";
         
-        https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=123456789&redirect_uri=https%3A%2F%2Fwww.example.com%2Fauth%2Flinkedin&state=987654321&scope=r_basicprofile
+        
+    }
+    
+    $scope.buildResume=function(fname,lname,skills,email,objective,univ,year,phone){
+        
+        console.log("inside build reesume"+phone);  
+         console.log("inside build reesume"+objective); 
+        
+        $http({
+         method: 'POST',
+         url : 'https://api.mlab.com/api/1/databases/asedemo/collections/resumedb?apiKey=i6Kabqc-LHECJKyDttmt1mPXR50yIZ1o',
+         data: JSON.stringify({
+           name : fname+" "+lname,
+           skills: skills,
+           resume: email+" "+objective+" "+univ+" "+year+" "+phone
+         }),
+         contentType: "application/json"
+       }).success(function() {
+         $scope.status ="User resume created successfully";
+       }).error(function(data){
+         $scope.status = "User resume Cannot be Created";
+       })
     }
 })
+
+.controller('CandidateCtrl', function($scope, $state,$filter,$q,LoginService,$http) {
+   
+    $scope.candidateList=new Array();
+    
+      $scope.getData=function(){           
+          $http({
+        method: 'GET',
+        url : 'https://api.mlab.com/api/1/databases/asedemo/collections/resumedb?apiKey=i6Kabqc-LHECJKyDttmt1mPXR50yIZ1o'
+
+      }).success(function(data) {
+             console.log(" get all the details"+data);              
+             var candidateList1=data;   
+             //$scope.candidateList=JSON.parse(data);     
+             console.log(" get all the details"+ candidateList1[0].name);
+              for (var i = 0; i < 4; i++) {
+								console.log("Inside loop" + i);
+                  $scope.candidateList[i] = {
+
+									"name": candidateList1[i].name,
+									"skills": candidateList1[i].skills
+									
+								};
+              }
+      })
+    }
+
+   
+
+    
+})
+
+
 

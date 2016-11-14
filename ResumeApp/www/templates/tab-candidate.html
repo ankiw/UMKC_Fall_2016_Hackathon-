@@ -1,9 +1,39 @@
-<ion-view view-title="Candidates Final List">
+<ion-view view-title="Candidate List">
   <ion-content>
     <ion-list>
-      <li class="nav__item"><a href="http://stackoverflow.com/">StackOverflow</a></li>
-      <li class="nav__item"><a href="https://github.com/">GitHub</a></li>
-      <li class="nav__item"><a href="https://www.linkedin.com/">LinkedIn</a></li>
+        <div class="span7" ng-init="getData()">
+				<div class="widget stacked widget-table action-table">
+
+					<div class="widget-header">
+						<i class="icon-th-list"></i>
+						<h1 style="text-align: center">Selected Candidate Details are as follows:</h1>
+					</div> <!-- /widget-header -->
+
+					<div class="widget-content">
+						<br>
+						<br>
+                        
+						<table class="table table-striped table-bordered">
+							<thead>
+							<tr>
+								<th style="text-align: left">Name</th>
+								<th style="text-align: left">Programming Skills</th>
+								
+							</tr>
+							</thead>
+							<tbody>
+							<tr ng-repeat="candidate in candidateList">                                
+                                <td><input submit-required="true" ng-change="edit(candidate)" type='text' ng-model='candidate.name' value={{candidate.name}}></td>
+								<td><input submit-required="true" ng-change="edit(candidate)"  type='text' ng-model='candidate.skills'></td>
+								
+							</tr>
+
+							</tbody>
+						</table>						
+					</div> <!-- /widget-content -->
+
+				</div> <!-- /widget -->
+			</div>
     </ion-list>
   </ion-content>
 </ion-view>
